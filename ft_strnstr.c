@@ -6,7 +6,7 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 16:54:04 by teom              #+#    #+#             */
-/*   Updated: 2020/12/24 22:43:31 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/06 16:24:26 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t		index;
-	const char	*ptr;
-	const char	*need_start;
+	size_t		size;
+	size_t		len_h;
+	size_t		len_n;
 
-	if (*needle == '\0' || (index = 0))
-		return ((char*)haystack);
-	ptr = 0;
-	while (*haystack && index + 1 < len && *needle)
+	if (!*needle)
+		return ((char *)haystack);
+	len_h = ft_strlen((char*)haystack);
+	len_n = ft_strlen((char*)needle);
+	if (len_h < len_n || len < len_n)
+		return (0);
+	size = len_h > len ? len : len_h;
+	while (size-- >= len_n)
 	{
-		if (*haystack == *needle)
-		{
-			ptr = haystack;
-			need_start = needle;
-			while (*needle && ++index < len)
-			{
-				if (*(haystack++) != *(needle++))
-					ptr = 0;
-			}
-			if (*needle)
-				needle = need_start;
-		}
-		index++;
+		if (!ft_memcmp(haystack, needle, len_n))
+			return ((char*)haystack);
 		haystack++;
 	}
-	return (index >= len ? (0) : ((char*)ptr));
+	return (0);
 }
