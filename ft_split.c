@@ -6,7 +6,7 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 14:48:44 by teom              #+#    #+#             */
-/*   Updated: 2020/12/28 15:58:51 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/06 16:53:05 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		**ft_split(char const *str, char c)
 
 	if (!str)
 		return (0);
-	if (!(ret = (char**)malloc(sizeof(char*) * word_num(str, c) + 1)))
+	if (!(ret = (char**)malloc(sizeof(char*) * (word_num(str, c) + 1))))
 		return (0);
 	i = 0;
 	while (*str)

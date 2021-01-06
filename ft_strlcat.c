@@ -6,7 +6,7 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 17:09:52 by teom              #+#    #+#             */
-/*   Updated: 2020/12/27 18:27:51 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/06 17:05:37 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		src++;
 		index++;
 	}
-	if (dest_len < size)
+	if (dest_len <= size)
 		*dest = 0;
 	if (dest_len > size)
 		return (src_len + size);

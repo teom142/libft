@@ -6,7 +6,7 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 19:31:37 by teom              #+#    #+#             */
-/*   Updated: 2021/01/06 16:38:42 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/06 16:53:34 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_calloc(size_t elt_count, size_t elt_size)
 {
 	void	*ret;
 
-	if(!(ret = malloc(elt_count * elt_size)))
-			return (NULL);
+	if (!(ret = malloc(elt_count * elt_size)))
+		return (0);
 	ft_bzero(ret, elt_count * elt_size);
 	return (ret);
 }

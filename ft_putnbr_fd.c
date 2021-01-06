@@ -6,7 +6,7 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 22:15:50 by teom              #+#    #+#             */
-/*   Updated: 2021/01/06 16:43:27 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/06 16:54:17 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n == -2147483648)
 	{
-		ft_putstr_fd("-2147483648",fd);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-',fd);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
 	ft_putnbr_one(n, fd);
