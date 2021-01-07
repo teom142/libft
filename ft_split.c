@@ -6,13 +6,13 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 14:48:44 by teom              #+#    #+#             */
-/*   Updated: 2021/01/06 16:53:05 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/07 01:01:27 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long	word_num(char const *str, char c)
+static long long	word_num(char const *str, char c)
 {
 	long long	num;
 
@@ -31,7 +31,7 @@ long long	word_num(char const *str, char c)
 	return (num);
 }
 
-char		**ft_split(char const *str, char c)
+char				**ft_split(char const *str, char c)
 {
 	char		**ret;
 	long long	i;

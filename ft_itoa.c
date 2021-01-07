@@ -6,19 +6,19 @@
 /*   By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 23:37:49 by teom              #+#    #+#             */
-/*   Updated: 2020/12/29 20:19:59 by teom             ###   ########.fr       */
+/*   Updated: 2021/01/07 01:03:25 by teom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-long int	ft_abs(long int num)
+static long int	ft_abs(long int num)
 {
 	return ((num < 0) ? -num : num);
 }
 
-int			count_digit(int num)
+static int		count_digit(int num)
 {
 	int		len;
 
@@ -31,7 +31,7 @@ int			count_digit(int num)
 	return (len);
 }
 
-char		*ft_itoa(int num)
+char			*ft_itoa(int num)
 {
 	char	*ret;
 	int		num_len;
