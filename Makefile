@@ -6,7 +6,7 @@
 #    By: teom <teom@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/27 19:19:47 by teom              #+#    #+#              #
-#    Updated: 2021/01/06 03:01:42 by teom             ###   ########.fr        #
+#    Updated: 2021/01/09 23:44:06 by teom             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,9 @@ FILES = ft_isdigit.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c	\
 		ft_putendl_fd.c	\
-		ft_putnbr_fd.c \
-		ft_lstnew.c \
+		ft_putnbr_fd.c
+
+BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -58,18 +59,26 @@ FILES = ft_isdigit.c \
 		ft_lstmap.c
 
 OBJ = $(subst .c,.o,$(FILES))
+BONUS_OBJ = $(subst .c,.o,$(BONUS))
 
-$(NAME) :
-	$(CC) $(CFLAGS) $(FILES) libft.h
-	ar rcs $(NAME) $(OBJ)
+
+.c.o: $(FILES)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(NAME) : $(OBJ)
+	ar rcs $@ $^
+
+bonus: $(BONUS_OBJ)
+	ar rcs $(NAME) $^
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 	rm -f *.gch
 
 fclean: clean
 	rm -f $(NAME)
+
 
 re: fclean all
