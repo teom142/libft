@@ -27,9 +27,9 @@
 
 3.필수사항
 
-     Program name	:  libft.a
-    Turn in files	:  *.c, libft.h, Makefile
-    Makefile	:  Yes
+     Program name	    :  libft.a
+    Turn in files	    :  *.c, libft.h, Makefile
+    Makefile	        :  Yes
     External functs.	:  Detailed below
     Libft authorized	:  Non-applicable
-    Description  :  여러분의 교육과정에서 사용할 중요한 함수들이 들어있는 자신만의 라이브러리를 만드세요.
+    Description         :  여러분의 교육과정에서 사용할 중요한 함수들이 들어있는 자신만의 라이브러리를 만드세요.
